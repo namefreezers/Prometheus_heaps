@@ -50,6 +50,16 @@ class MaxHeap extends Heap {
 			i = par(i);
 		}
 	}
+	int max(){
+		return heap[1];
+	}
+	int extractMax(){
+		int max = heap[1];
+		heap[1] = heap[size];
+		size--;
+		maxHeapify(1);
+		return max;
+	}
 
 }
 
@@ -70,14 +80,15 @@ class MinHeap extends Heap {
 			minHeapify(min);
 		}
 	}
+	
 
 	void insert(int key) {
 		size++;
 		heap[size] = 2000000000;
-		increaseKey(size, key);
+		decreaseKey(size, key);
 	}
 
-	void increaseKey(int i, int key) {
+	void decreaseKey(int i, int key) {
 		heap[i] = key;
 		while (par(i) != 0 & heap[par(i)] > heap[i]) {
 			int temp = heap[par(i)];
@@ -85,6 +96,17 @@ class MinHeap extends Heap {
 			heap[i] = temp;
 			i = par(i);
 		}
+	}
+	
+	int min(){
+		return heap[1];
+	}
+	int extractMin(){
+		int min = heap[1];
+		heap[1] = heap[size];
+		size--;
+		minHeapify(1);
+		return min;
 	}
 }
 
