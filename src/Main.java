@@ -179,20 +179,20 @@ public class Main {
 		DoubleHeap heap = new DoubleHeap(n);
 		for (int i = 0; i < n; i++) {
 			heap.insert(Integer.parseInt(in.readLine()));
-//			if (i == 2014 | i == 9875) {
-//				int[] med = heap.mediana();
-//				for (int j : med)
-//					System.out.print(j + " ");
-//				System.out.println();
-//			}
-			if (i==2014){
-				for (int j = 0; j<5; j++)
-					System.out.print(heap.max.heap[j+1] + " ");
-				System.out.println();
-				for (int j = 0; j<5; j++)
-					System.out.print(heap.min.heap[j+1] + " ");
+			if (i == 2014 | i == 9875) {
+				int[] med = heap.mediana();
+				for (int j : med)
+					System.out.print(j + " ");
 				System.out.println();
 			}
+//			if (i==2014){
+//				for (int j = 0; j<5; j++)
+//					System.out.print(heap.max.heap[j+1] + " ");
+//				System.out.println();
+//				for (int j = 0; j<5; j++)
+//					System.out.print(heap.min.heap[j+1] + " ");
+//				System.out.println();
+//			}
 		}
 
 		in.close();
